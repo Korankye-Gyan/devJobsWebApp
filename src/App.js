@@ -1,18 +1,11 @@
+import Header from "./components/Header";
+import Search from "./components/Search";
+
 function App() {
   return (
     <div className="App">
-      <h1
-        style={{
-          height: "80vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "40px",
-          color: "brown",
-        }}
-      >
-        Hurray!!! Happy building
-      </h1>
+    <Header/>
+    <Search/>
     </div>
   );
 }
