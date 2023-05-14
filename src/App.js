@@ -1,11 +1,21 @@
 import Header from "./components/Header";
-import Search from "./components/Search";
+import Jobdetails from "./pages/Jobdetails";
+import Joblist from "./pages/Joblist";
+import {BrowserRouter as Router, Route,Routes} from 'react-router-dom'
+
+
 
 function App() {
   return (
     <div className="App">
     <Header/>
-    <Search/>
+    <Router>
+     <Routes>
+       <Route path='/' element={<Joblist/>}/>
+       <Route path='/jobdetails' element={<Jobdetails/>}/>
+     </Routes> 
+    </Router>
+      
     </div>
   );
 }
