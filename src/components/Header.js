@@ -3,7 +3,7 @@ import CustomizedSwitches from "./CustomizedSwitches"
 
 const Header = () => {
   return (
-    <div >
+    <div>
      <svg width="100%" height="160" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1440 0H0v60c0 55.228 44.772 100 100 100h1340V0z" fill="#5964E0"/>
         <mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="160">

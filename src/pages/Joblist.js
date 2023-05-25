@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Box, InputBase, Checkbox, FormControlLabel, IconButton,List,ListItem,Paper } from '@mui/material';
+import { Box, InputBase, Checkbox, FormControlLabel, IconButton,List,ListItem,Paper} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Button from "../components/Buttons";
 import Job from '../components/Job';
 
-
-
-
 const Joblist = () => {
+  const [visibleCards, setVisibleCards] = useState(6); //Number of initial visible cards
   const [jobs, setJobs] = useState([]);
+  const [searchFilter, setSearchFilter] = useState('');
+  const [locationFilter, setLocationFilter] = useState('');
+  const [fullTimeOnly, setFullTimeOnly] = useState(false);
 
   useEffect(() => {
     fetch("/data.json") // fetch the JSON data from the public URL path
@@ -17,84 +18,114 @@ const Joblist = () => {
       .then(data => setJobs(data)); // set the state with the fetched data
   }, []);
 
+  const loadMore = () => {
+    setVisibleCards(preVisibleCards => preVisibleCards + 4);
+  };
+
+  const filteredJobs = jobs.filter(job =>
+    (job.position || '').toLowerCase().includes(searchFilter.toLowerCase()) &&
+    (job.location || '').toLowerCase().includes(locationFilter.toLowerCase()) &&
+    (!fullTimeOnly || job.contract === 'Full Time')
+  );
+
   return (
     <>
-    <Box
-      component="form"
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <Paper
+      <Box
+        component="form"
         sx={{
-          border: '1px solid rgba(0, 0, 0, 0.23)',
-          borderRadius: '4px',
-          padding: '14.5px 14px',
           display: 'flex',
-          alignItems: 'stretch',
+          justifyContent: 'center',
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <Paper
+          sx={{
+            border: '1px solid rgba(0, 0, 0, 0.23)',
+            borderRadius: '4px',
+            padding: '14.5px 14px',
+            display: 'flex',
+            alignItems: 'stretch',
+          }}
+        >
+          <Box>
+            <IconButton sx={{ p: '10px' }} aria-label="location">
+              <SearchIcon sx={{ color: '#5964E0' }} />
+            </IconButton>
+            <InputBase
+              id="search"
+              placeholder="Filter by title, companies, expertise..."
+              sx={{ width: '280px' }}
+              value={searchFilter}
+              onChange={event => setSearchFilter(event.target.value)}
+            />
+          </Box>
+          <Box
+            sx={{
+              borderLeft: '1px solid rgba(0, 0, 0, 0.23)',
+              paddingLeft: '14px',
+              marginLeft: '14px',
+            }}
+          >
+            <IconButton sx={{ p: '10px' }} aria-label="location">
+              <LocationOnIcon sx={{ color: '#5964E0' }} />
+            </IconButton>
+
+            <InputBase
+              id="location"
+              placeholder="Filter by location..."
+              value={locationFilter}
+              onChange={event => setLocationFilter(event.target.value)}
+            />
+          </Box>
+          <Box
+            sx={{
+              borderLeft: '1px solid rgba(0, 0, 0, 0.23)',
+              paddingLeft: '20px',
+              display: 'flex',
+              gap:'1rem'
+            }}
+          >
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={fullTimeOnly}
+                  onChange={event => setFullTimeOnly(event.target.checked)}
+                />
+              }
+              label="Full Time Only"
+            />
+            <Button name="Search" onClick={() => setJobs(filteredJobs)} />
+          </Box>
+        </Paper>
+      </Box>
+      <List>
+        <ListItem
+         sx={{
+          display:'flex',
+          justifyContent:'center',
+          gap:'1rem',
+          flexWrap:'wrap'}}>
+          {
+           filteredJobs.slice(0,visibleCards).map(job=><Job job={job} key={job.id}/>)
+          }
+        </ListItem>
+      </List>
+      <Box
+         sx={{display:'flex',
+         alignItem:'center',
+         justifyContent:'center',
+         marginBottom:'20px'
         }}
       >
-        <Box>
-          <IconButton sx={{ p: '10px' }} aria-label="location">
-            <SearchIcon sx={{ color: '#5964E0' }} />
-          </IconButton>
-          <InputBase
-            id="search"
-            placeholder="Filter by title, companies, expertise..."
-            sx={{ width: '280px' }}
-          />
-        </Box>
-        <Box
-          sx={{
-            borderLeft: '1px solid rgba(0, 0, 0, 0.23)',
-            paddingLeft: '14px',
-            marginLeft: '14px',
-          }}
-        >
-          <IconButton sx={{ p: '10px' }} aria-label="location">
-            <LocationOnIcon sx={{ color: '#5964E0' }} />
-          </IconButton>
-
-          <InputBase id="location" placeholder="Filter by location..." />
-        </Box>
-        <Box
-          sx={{
-            borderLeft: '1px solid rgba(0, 0, 0, 0.23)',
-            paddingLeft: '20px',
-            display: 'flex',
-            gap:'1rem'
-          }}
-        >
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Full Time Only" />
-          <Button name= 'Search'/>
-        </Box>
-      </Paper>
-    </Box>
-    <List>
-      <ListItem sx={{
-        display:'flex',
-        justifyContent:'center',
-        gap:'1rem',
-        flexWrap:'wrap'}}>
-        {
-         jobs.map(job=><Job job={job} key={job.id}/>)
-        }
-      </ListItem>
-    </List>
-    <Box
-       sx={{display:'flex',
-       alignItem:'center',
-       justifyContent:'center',
-       marginBottom:'20px'
-      }}
-    >
-       <Button name= 'Load More'/>
-    </Box>  
+        
+        { visibleCards < filteredJobs.length &&(
+          <Button name= 'Load More' onClick={loadMore}/>
+        )
+      }  
+      </Box>  
     </>
   )
 }
 
-export default Joblist
+export default Joblist;
