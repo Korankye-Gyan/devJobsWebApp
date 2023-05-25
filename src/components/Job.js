@@ -13,8 +13,25 @@ const bull = (
 export default function Job({job}) {
   return (
     <Paper>
-    <Card sx={{ minWidth: 275 }}>
+    <Card 
+    sx={{ width: '435px',
+          height:'230px'
+          
+     }}>
       <CardContent>
+         <Box
+         sx={{backgroundColor:'black',
+              width:'40px',
+              hight:'80px',
+              borderRadius:'50px',
+            }}
+         >
+            <img 
+            src={job.logo}
+            style={{width:'100%'}}
+            alt='logo'
+            />
+          </Box>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {job.postedAt}{bull}{job.contract}
         </Typography>
@@ -28,7 +45,8 @@ export default function Job({job}) {
       <CardActions>
         <Button size="small" 
           sx={{ textTransform: 'none',
-          color:'#5964E0'
+          color:'#5964E0',
+          paddingBottom:'5px'
           }}
         >
           {job.location}
