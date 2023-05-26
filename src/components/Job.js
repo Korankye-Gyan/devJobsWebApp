@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Box,Paper,Card,CardActions,CardContent,Button,Typography}from '@mui/material';
-
+import { Link } from 'react-router-dom';
 const bull = (
   <Box
     component="span"
@@ -20,7 +20,7 @@ export default function Job({job}) {
      }}>
       <CardContent>
          <Box
-         sx={{backgroundColor:'black',
+         sx={{backgroundColor: job.logoBackground,
               width:'40px',
               hight:'80px',
               borderRadius:'50px',
@@ -36,7 +36,7 @@ export default function Job({job}) {
           {job.postedAt}{bull}{job.contract}
         </Typography>
         <Typography variant="h5" component="div">
-          {job.position}
+        <Link to={`/jobDetails/${job.position}`}>{job.position}</Link>
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {job.company}
