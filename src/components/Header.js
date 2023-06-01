@@ -15,7 +15,7 @@ const Header = () => {
           <foreignObject x="0" y="0" width="100%" height="100%">
            <div xmlns="http://www.w3.org/1999/xhtml" style={{display:'flex',alignItems:'center',justifyContent:'space-between', textAlign: 'left', fontSize: '10px',color:'#ffffff', padding: '20px 60px' }}>
              <h1 style={{ margin: 0 }}>
-               <Link to={'/'}>devjobs</Link>
+               <Link to={'/'} style={{textDecoration:'none',color:'#ffffff'}}>devjobs</Link>
              </h1>
              <CustomizedSwitches/>
            </div>

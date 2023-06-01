@@ -21,14 +21,18 @@ export default function Job({job}) {
       <CardContent>
          <Box
          sx={{backgroundColor: job.logoBackground,
-              width:'40px',
-              hight:'80px',
-              borderRadius:'50px',
+              width:'20px',
+              hight:'30px',
+              borderRadius:'15px',
+              display:'flex',
+              justifyContent:"center",
+              alignItem:'center',
+              padding:'15px'
             }}
          >
             <img 
             src={job.logo}
-            style={{width:'100%'}}
+            style={{width:'20px',height:'20px'}}
             alt='logo'
             />
           </Box>
@@ -36,7 +40,7 @@ export default function Job({job}) {
           {job.postedAt}{bull}{job.contract}
         </Typography>
         <Typography variant="h5" component="div">
-        <Link to={`/jobDetails/${job.position}`}>{job.position}</Link>
+        <Link to={`/jobDetails/${job.position}`} className='position_Link'>{job.position}</Link>
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {job.company}
