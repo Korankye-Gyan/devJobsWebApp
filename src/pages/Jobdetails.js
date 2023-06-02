@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import {
-  Box,
-  Paper,
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-  Button
-} from '@mui/material';
+import {Box,Paper,Card,CardActions,CardContent,Typography,Button} from '@mui/material';
 import Buttons from '../components/Buttons';
 
 const Jobdetails = () => {
@@ -37,7 +29,7 @@ const Jobdetails = () => {
 
   return (
     <>
-      <Box sx={{ margin: '0 50px' }}>
+      <Box sx={{ margin: '0 60px' }}>
         
           <Box sx={{background:'#ffffff',
           boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;'
@@ -46,8 +38,6 @@ const Jobdetails = () => {
               <Box
                 sx={{
                   display: 'flex',
-                  justifyContent: 'left',
-                  padding: '0'
                 }}
               >
                 <Box
@@ -55,9 +45,6 @@ const Jobdetails = () => {
                     backgroundColor: job.logoBackground,
                     width: '90px',
                     hight: '90px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
                     padding: '10px'
                   }}
                 >
@@ -72,17 +59,17 @@ const Jobdetails = () => {
                   <Typography variant="h5" component="div">
                     {job.company}
                   </Typography>
-
-                  <CardActions
-                    sx={{ fontSize: 14,
-                      display:'flex',
-                      gap:'40rem'
-                     }}
+                  <Box sx={{display:'flex',gap:'39rem'}}>
+                  <Box
                     color="text.secondary"
                   >
                     {job.website}
+
+                  </Box>
+                  <Box>
                     <Buttons name='Company Site'/>
-                  </CardActions>
+                  </Box>
+                   </Box>
                 </Box>
               </Box>
           </Box>   
@@ -146,7 +133,10 @@ const Jobdetails = () => {
           <Paper></Paper>
         </Box>
 
-        <Card>
+        
+      </Box>
+
+      <Card>
           <CardContent
             sx={{
               display: 'flex',
@@ -171,7 +161,6 @@ const Jobdetails = () => {
             </CardActions>
           </CardContent>
         </Card>
-      </Box>
     </>
   );
 };
