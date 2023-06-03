@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import { ThemeContext } from '../ThemeContext';
+//import { ThemeContext } from '../ThemeContext';
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
   width: 28,
@@ -51,11 +51,11 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const CustomizedSwitches = () => {
-  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
+  //const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
 
-  const handleSwitchChange = () => {
-    toggleDarkMode();
-  };
+  // const handleSwitchChange = () => {
+  //   toggleDarkMode();
+  // };
 
   return (
     <FormGroup>
@@ -64,9 +64,9 @@ const CustomizedSwitches = () => {
           <WbSunnyIcon />
         </Typography>
         <AntSwitch
-          checked={isDarkMode}
-          onChange={handleSwitchChange}
-          inputProps={{ 'aria-label': 'ant design' }}
+          // checked={isDarkMode}
+          // onChange={handleSwitchChange}
+          // inputProps={{ 'aria-label': 'ant design' }}
         />
         <Typography>
           <DarkModeIcon />

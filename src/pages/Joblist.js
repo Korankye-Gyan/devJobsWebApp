@@ -55,7 +55,7 @@ const Joblist = () => {
             <InputBase
               id="search"
               placeholder="Filter by title, companies, expertise..."
-              sx={{ width: '280px' }}
+              sx={{ width: {lg:'300px',md:'260px',sm:'260px',xs:'260px'}, }}
               value={searchFilter}
               onChange={event => setSearchFilter(event.target.value)}
             />
@@ -63,8 +63,15 @@ const Joblist = () => {
           <Box
             sx={{
               borderLeft: '1px solid rgba(0, 0, 0, 0.23)',
-              paddingLeft: '14px',
-              marginLeft: '14px',
+              paddingLeft: '2px',
+              marginLeft: '8px',
+              display:{
+                xl:'block',
+                lg:'block',
+                md:'block',
+                sm:'none',
+                xs:'none'
+              },
             }}
           >
             <IconButton sx={{ p: '10px' }} aria-label="location">
@@ -74,6 +81,7 @@ const Joblist = () => {
             <InputBase
               id="location"
               placeholder="Filter by location..."
+              sx={{ width: {lg:'220px',md:'150px',sm:'100',xs:'50px'}, }}
               value={locationFilter}
               onChange={event => setLocationFilter(event.target.value)}
             />
@@ -82,11 +90,18 @@ const Joblist = () => {
             sx={{
               borderLeft: '1px solid rgba(0, 0, 0, 0.23)',
               paddingLeft: '20px',
-              display: 'flex',
-              gap:'1rem'
+              gap:'1rem',
+              display:{
+                xl:'flex',
+                lg:'flex',
+                md:'flex',
+                sm:'none',
+                xs:'none'
+              },
             }}
           >
             <FormControlLabel
+             sx={{ width: {lg:'250px',md:'150px',sm:'100px',xs:'50px'}, }}
               control={
                 <Checkbox
                   checked={fullTimeOnly}

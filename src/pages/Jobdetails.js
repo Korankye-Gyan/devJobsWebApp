@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import {Box,Paper,Card,CardActions,CardContent,Typography,Button} from '@mui/material';
+import {Box,Card,CardActions,CardContent,Typography,Button} from '@mui/material';
 import Buttons from '../components/Buttons';
 
 const Jobdetails = () => {
@@ -31,10 +31,7 @@ const Jobdetails = () => {
     <>
       <Box sx={{ margin: '0 60px' }}>
         
-          <Box sx={{background:'#ffffff',
-          boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;'
-          }}>
-            
+          <Card>
               <Box
                 sx={{
                   display: 'flex',
@@ -59,7 +56,16 @@ const Jobdetails = () => {
                   <Typography variant="h5" component="div">
                     {job.company}
                   </Typography>
-                  <Box sx={{display:'flex',gap:'39rem'}}>
+                  <Box sx={{display:'flex',
+                        gap:{
+                          sx:'5rem',
+                          sm:'10rem',
+                          md:'25rem',
+                          lg:'39rem',
+                          xl:'49rem'
+                        },
+                  }}
+                  >
                   <Box
                     color="text.secondary"
                   >
@@ -72,10 +78,11 @@ const Jobdetails = () => {
                    </Box>
                 </Box>
               </Box>
-          </Box>   
-        <Box sx={{ backgroundColor: '#ffffff', margin: '30px 0', padding: '50px',
-                  boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;'
-                }}>
+          </Card>   
+         <Card sx={{margin: '30px 0', 
+                    padding: '50px',
+                  }}>
+            <CardContent>
           <Box>
             <Typography sx={{ fontSize: 14 }} color="text.secondary">
               {job.postedAt}
@@ -130,8 +137,8 @@ const Jobdetails = () => {
             {job.role.items}
           </Typography>
 
-          <Paper></Paper>
-        </Box>
+          </CardContent>
+        </Card>
 
         
       </Box>
