@@ -14,14 +14,14 @@ export default function Job({job}) {
   return (
     <Paper>
     <Card 
-    sx={{ width: '435px',
+    sx={{ width: '420px',
           height:'230px'
           
      }}>
       <CardContent>
          <Box
          sx={{backgroundColor: job.logoBackground,
-              width:'20px',
+              width:'50px',
               hight:'30px',
               borderRadius:'15px',
               display:'flex',

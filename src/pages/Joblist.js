@@ -55,7 +55,7 @@ const Joblist = () => {
             <InputBase
               id="search"
               placeholder="Filter by title, companies, expertise..."
-              sx={{ width: '280px' }}
+              sx={{ width: '260px' }}
               value={searchFilter}
               onChange={event => setSearchFilter(event.target.value)}
             />
@@ -63,8 +63,8 @@ const Joblist = () => {
           <Box
             sx={{
               borderLeft: '1px solid rgba(0, 0, 0, 0.23)',
-              paddingLeft: '14px',
-              marginLeft: '14px',
+              paddingLeft: '2px',
+              marginLeft: '8px',
             }}
           >
             <IconButton sx={{ p: '10px' }} aria-label="location">
