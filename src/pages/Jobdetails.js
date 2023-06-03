@@ -56,7 +56,16 @@ const Jobdetails = () => {
                   <Typography variant="h5" component="div">
                     {job.company}
                   </Typography>
-                  <Box sx={{display:'flex',gap:'39rem'}}>
+                  <Box sx={{display:'flex',
+                        gap:{
+                          sx:'5rem',
+                          sm:'10rem',
+                          md:'25rem',
+                          lg:'39rem',
+                          xl:'49rem'
+                        },
+                  }}
+                  >
                   <Box
                     color="text.secondary"
                   >

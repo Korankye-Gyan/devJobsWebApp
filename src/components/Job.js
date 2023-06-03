@@ -14,8 +14,15 @@ export default function Job({job}) {
   return (
     <Paper>
     <Card 
-    sx={{ width: '420px',
-          height:'230px'
+    sx={{ height:'250px',
+          width:{
+           xs:'327px',
+           sm:'350px',
+           md:'400px',
+           lg:'500px',
+           xl:'550px'
+          },
+          
           
      }}>
       <CardContent>

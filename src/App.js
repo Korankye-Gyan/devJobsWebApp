@@ -10,10 +10,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
   
-
   const theme = createTheme({
     palette: {
-      mode: 'dark',
+      mode: 'light', // Set the default mode to light
+      primary: {
+        main: '#5964E0',
+      },
     },
   });
 
@@ -21,7 +23,6 @@ function App() {
    <ThemeProvider theme={theme}>
       <CssBaseline />
     <div className="App">
-          {/* <ThemeProvider> */}
         <Router>
           <Header />
           <Routes>
@@ -29,7 +30,6 @@ function App() {
             <Route path="/jobDetails/:position" element={<Jobdetails />} />
           </Routes>
         </Router>
-          {/* </ThemeProvider> */}
      </div>
    </ThemeProvider>
   );
