@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Button from "../components/Buttons";
 import Job from '../components/Job';
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 
 const Joblist = () => {
   const [visibleCards, setVisibleCards] = useState(6); //Number of initial visible cards
@@ -35,6 +36,7 @@ const Joblist = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
+          marginBottom:'50px',
         }}
         noValidate
         autoComplete="off"
@@ -46,19 +48,54 @@ const Joblist = () => {
             padding: '14.5px 14px',
             display: 'flex',
             alignItems: 'stretch',
+            position:'absolute', // To position search bar on header
+            marginTop:'-60px'    // To position search bar on header
           }}
         >
           <Box>
-            <IconButton sx={{ p: '10px' }} aria-label="location">
-              <SearchIcon sx={{ color: '#5964E0' }} />
+            <IconButton sx={{ p: '10px'}} aria-label="location">
+              <SearchIcon sx={{ color: '#5964E0',
+                                display:{
+                                  xl:'flex',
+                                  lg:'flex',
+                                  md:'flex',
+                                  sm:'none',
+                                  xs:'none' 
+                                },
+                              }} />
             </IconButton>
             <InputBase
               id="search"
               placeholder="Filter by title, companies, expertise..."
-              sx={{ width: {lg:'300px',md:'260px',sm:'260px',xs:'260px'}, }}
+              sx={{ width: {lg:'270px',md:'240px',sm:'260px',xs:'260px'}, }}
               value={searchFilter}
               onChange={event => setSearchFilter(event.target.value)}
             />
+            <IconButton sx={{ p: '10px' }} aria-label="location">
+              <FilterAltOutlinedIcon sx={{ 
+                                   display:{
+                                    xl:'none',
+                                    lg:'none',
+                                    md:'none',
+                                    sm:'flex',
+                                    xs:'flex' 
+                                            },
+                                     }} />
+            </IconButton>
+            <IconButton sx={{ p: '10px' }} aria-label="location">
+              <SearchIcon sx={{ backgroundColor: '#5964E0',
+                                color:'#ffffff',
+                                padding:'4px',
+                                display:{
+                                  xl:'none',
+                                  lg:'none',
+                                  md:'none',
+                                  sm:'flex',
+                                  xs:'flex' 
+                                },
+                                borderRadius:'5px'
+                              }} />
+            </IconButton>
           </Box>
           <Box
             sx={{
@@ -81,7 +118,7 @@ const Joblist = () => {
             <InputBase
               id="location"
               placeholder="Filter by location..."
-              sx={{ width: {lg:'220px',md:'150px',sm:'100',xs:'50px'}, }}
+              sx={{ width: {lg:'250px',md:'200px',sm:'200',xs:'150px'}, }}
               value={locationFilter}
               onChange={event => setLocationFilter(event.target.value)}
             />
@@ -119,7 +156,7 @@ const Joblist = () => {
          sx={{
           display:'flex',
           justifyContent:'center',
-          gap:'1rem',
+          gap:'3rem',
           flexWrap:'wrap'}}>
           {
            filteredJobs.slice(0,visibleCards).map(job=><Job job={job} key={job.id}/>)

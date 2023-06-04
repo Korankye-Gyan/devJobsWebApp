@@ -14,17 +14,15 @@ export default function Job({job}) {
   return (
     <Paper>
     <Card 
-    sx={{ height:'250px',
+    sx={{ height:'210px',
           width:{
-           xs:'327px',
-           sm:'350px',
+           xs:'390px',
+           sm:'390px',
            md:'400px',
            lg:'500px',
            xl:'550px'
           },
-          
-          
-     }}>
+        }}>
       <CardContent>
          <Box
          sx={{backgroundColor: job.logoBackground,
@@ -34,7 +32,9 @@ export default function Job({job}) {
               display:'flex',
               justifyContent:"center",
               alignItem:'center',
-              padding:'15px'
+              padding:'15px',
+              position:'absolute', // To position the img higher than the card
+              marginTop:'-50px'    // To position the img higher than the card
             }}
          >
             <img 
