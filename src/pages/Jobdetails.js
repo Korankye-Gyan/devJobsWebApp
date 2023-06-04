@@ -29,20 +29,29 @@ const Jobdetails = () => {
 
   return (
     <>
-      <Box sx={{ margin: '0 60px' }}>
-        
+      <Box sx={{ margin: '0 60px', 
+                position:'relative', // To position the contaiiner on header
+                marginTop:'-70px',    // To position the container on header
+              }}>
           <Card>
               <Box
                 sx={{
-                  display: 'flex',
+                  display:{
+                    xl:'flex',
+                    lg:'flex',
+                    md:'flex',
+                    sm:'block',
+                    xs:'block',
+                  },
+                  
                 }}
               >
                 <Box
                   sx={{
                     backgroundColor: job.logoBackground,
-                    width: '90px',
+                    width: '100px',
                     hight: '90px',
-                    padding: '10px'
+                    padding: '10px',
                   }}
                 >
                   <img
@@ -56,7 +65,14 @@ const Jobdetails = () => {
                   <Typography variant="h5" component="div">
                     {job.company}
                   </Typography>
-                  <Box sx={{display:'flex',
+                  <Box sx={{
+                         display:{
+                          xl:'flex',
+                          lg:'flex',
+                          md:'flex',
+                          sm:'block',
+                          xs:'block'
+                        },
                         gap:{
                           sx:'5rem',
                           sm:'10rem',
@@ -91,7 +107,13 @@ const Jobdetails = () => {
             </Typography>
              <Box 
              sx={{
-              display: 'flex',
+              display:{
+                xl:'flex',
+                lg:'flex',
+                md:'flex',
+                sm:'block',
+                xs:'block'
+              },
               justifyContent: 'space-between'
             }}>
             <Typography variant="h4" component="div">
