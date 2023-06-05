@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import {Box,Card,CardActions,CardContent,Typography,Button} from '@mui/material';
 import Buttons from '../components/Buttons';
 
+
+
+
 const Jobdetails = () => {
   const [jobs, setJobs] = useState([]);
   const { position } = useParams();
@@ -17,6 +20,7 @@ const Jobdetails = () => {
   if (!job) {
     return <div>Loading...</div>;
   }
+ 
 
   const bull = (
     <Box
@@ -58,7 +62,10 @@ const Jobdetails = () => {
                     src={job.logo}
                     style={{ width: '30px', height: '30px' }}
                     alt="logo"
+                    onLoad={() => console.log('Image loaded:', job.logo)}
+                    onError={() => console.log('Image failed to load:', job.logo)}
                   />
+                  
                 </Box>
                 <Box sx={{padding:'30px 20px'}}>
                   
