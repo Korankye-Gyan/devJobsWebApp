@@ -19,7 +19,7 @@ const Jobdetails = () => {
 
   if (!job) {
     return <div>Loading...</div>;
-  }
+  } //To fix an error in browser loading page of Jobdetails
  
 
   const bull = (
