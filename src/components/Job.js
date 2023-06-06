@@ -19,8 +19,8 @@ export default function Job({job}) {
            xs:'390px',
            sm:'390px',
            md:'400px',
-           lg:'500px',
-           xl:'550px'
+           lg:'320px',
+           xl:'320px'
           },
         }}>
       <CardContent>
