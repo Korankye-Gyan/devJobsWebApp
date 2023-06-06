@@ -14,7 +14,8 @@ function App() {
     palette: {
       mode: isDarkMode ? 'dark' : 'light',
       background: {
-        default: isDarkMode ? '#000000' : '#F4F6F8',
+        default: isDarkMode ? '#090C11' : '#F4F6F8',
+        secondary:isDarkMode ? '#19202D' : '#ffffff',
       },
     },
   });

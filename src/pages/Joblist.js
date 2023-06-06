@@ -19,7 +19,7 @@ const Joblist = () => {
   const [fullTimeOnly, setFullTimeOnly] = useState(false);
   const [isFilterPromptOpen, setIsFilterPromptOpen] = useState(false);
 
-  const theme = useTheme();
+  const theme = useTheme(); // To apply Dark and light mode to Filter Alt
   
 
   useEffect(() => {
@@ -176,7 +176,7 @@ const Joblist = () => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            backgroundColor: theme.palette.background.default,
+            backgroundColor: theme.palette.background.secondary,
             padding: '20px',
             borderRadius: '8px',
             boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.15)',
