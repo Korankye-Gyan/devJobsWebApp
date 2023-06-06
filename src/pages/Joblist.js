@@ -67,7 +67,7 @@ const Joblist = () => {
           }}
         >
           <Box>
-            <IconButton sx={{ p: '10px' }} aria-label="location">
+            <IconButton sx={{ p: '10px 0' }} aria-label="location">
               <SearchIcon sx={{
                 color: '#5964E0',
                 display: {
@@ -82,7 +82,7 @@ const Joblist = () => {
             <InputBase
               id="search"
               placeholder="Filter by title, companies, expertise..."
-              sx={{ width: { lg: '270px', md: '240px', sm: '260px', xs: '260px' }, }}
+              sx={{ width: { lg: '270px', md: '240px', sm: '185px', xs: '185px' }, }}
               value={searchFilter}
               onChange={event => setSearchFilter(event.target.value)}
             />

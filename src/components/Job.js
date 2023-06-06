@@ -16,8 +16,8 @@ export default function Job({job}) {
     <Card 
     sx={{ height:'210px',
           width:{
-           xs:'390px',
-           sm:'390px',
+           xs:'300px',
+           sm:'300px',
            md:'400px',
            lg:'320px',
            xl:'320px'
