@@ -6,7 +6,7 @@ import Button from "../components/Buttons";
 import Job from '../components/Job';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+
 
   
   
@@ -20,7 +20,7 @@ const Joblist = () => {
   const [isFilterPromptOpen, setIsFilterPromptOpen] = useState(false);
 
   const theme = useTheme();
-  const isDarkMode = useMediaQuery(theme.breakpoints.down('md'));
+  
 
   useEffect(() => {
     fetch("/data.json") // fetch the JSON data from the public URL path
@@ -176,7 +176,7 @@ const Joblist = () => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            backgroundColor: isDarkMode ? 'dark' : '#ffffff',
+            backgroundColor: theme.palette.background.default,
             padding: '20px',
             borderRadius: '8px',
             boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.15)',
