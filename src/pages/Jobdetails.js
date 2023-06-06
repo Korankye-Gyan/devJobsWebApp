@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import {Box,Card,CardActions,CardContent,Typography,Button} from '@mui/material';
+import {Box,Card,CardActions,CardContent,Typography,Button,Link} from '@mui/material';
 import Buttons from '../components/Buttons';
+//import {ReactSVG} from 'react-svg';
 
 
 
@@ -65,7 +66,6 @@ const Jobdetails = () => {
                     onLoad={() => console.log('Image loaded:', job.logo)}
                     onError={() => console.log('Image failed to load:', job.logo)}
                   />
-                  
                 </Box>
                 <Box sx={{padding:'30px 20px'}}>
                   
@@ -93,7 +93,6 @@ const Jobdetails = () => {
                     color="text.secondary"
                   >
                     {job.website}
-
                   </Box>
                   <Box>
                     <Buttons name='Company Site'/>
