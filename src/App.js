@@ -1,37 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-//import { ThemeProvider } from './ThemeContext';
+import ThemeContext from './ThemeContext';
 import Header from './components/Header';
 import Jobdetails from './pages/Jobdetails';
 import Joblist from './pages/Joblist';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-
 function App() {
-  
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   const theme = createTheme({
     palette: {
-      mode: 'light', // Set the default mode to light
-      primary: {
-        main: '#5964E0',
+      mode: isDarkMode ? 'dark' : 'light',
+      background: {
+        default: isDarkMode ? '#090C11' : '#F4F6F8',
+        secondary:isDarkMode ? '#19202D' : '#ffffff',
       },
     },
   });
 
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevDarkMode) => !prevDarkMode);
+  };
+
   return (
-   <ThemeProvider theme={theme}>
-      <CssBaseline />
-    <div className="App">
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Joblist />} />
-            <Route path="/jobDetails/:position" element={<Jobdetails />} />
-          </Routes>
-        </Router>
-     </div>
-   </ThemeProvider>
+    <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="App">
+          <Router>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Joblist />} />
+              <Route path="/jobDetails/:position" element={<Jobdetails />} />
+            </Routes>
+          </Router>
+        </div>
+      </ThemeProvider>
+    </ThemeContext.Provider>
   );
 }
 
