@@ -175,7 +175,7 @@ const Jobdetails = () => {
           <CardContent
             sx={{
               display: 'flex',
-              justifyContent: 'space-between'
+              justifyContent: 'space-evenly',
             }}
           >
             <Box>
