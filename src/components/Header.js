@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import ThemeContext from '../ThemeContext';
 import CustomizedSwitches from './CustomizedSwitches';
 
 const Header = () => {
-  //const { isDarkMode } = useContext(ThemeContext);
 
   return (
     <div>

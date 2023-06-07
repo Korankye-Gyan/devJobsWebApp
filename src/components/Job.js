@@ -60,7 +60,7 @@ export default function Job({job}) {
           {job.postedAt}{bull}{job.contract}
         </Typography>
         <Typography variant="h5" component="div">
-        <Link to={`/jobDetails/${job.position}`} className='position_Link'>{job.position}</Link>
+        <Link to={`/jobDetails/${job.id}`} className='position_Link'>{job.position}</Link>
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {job.company}
