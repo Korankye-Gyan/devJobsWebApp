@@ -6,6 +6,7 @@ import Jobdetails from './pages/Jobdetails';
 import Joblist from './pages/Joblist';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { AnimatePresence } from "framer-motion"
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -29,6 +30,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="App">
+        <AnimatePresence>
           <Router>
             <Header />
             <Routes>
@@ -36,6 +38,7 @@ function App() {
               <Route path="/jobDetails/:position" element={<Jobdetails />} />
             </Routes>
           </Router>
+          </AnimatePresence>
         </div>
       </ThemeProvider>
     </ThemeContext.Provider>
