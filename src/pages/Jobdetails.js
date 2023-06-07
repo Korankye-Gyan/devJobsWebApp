@@ -53,7 +53,10 @@ const Jobdetails = () => {
           }}
           transition={{ ease: 'easeInOut' }}
         >
-          <Box sx={{ margin: '0 60px', position: 'relative', marginTop: '-70px' }}>
+          <Box sx={{
+             margin: '0 60px',
+              position: 'relative', 
+              marginTop: '-70px'}}>
             <Card>
               <Box
                 sx={{
@@ -198,7 +201,7 @@ const Jobdetails = () => {
                 </Typography>
               </Box>
               <CardActions>
-                <Buttons name="Apply Now" />
+              <Buttons name="Apply Now" onClick={() => window.open(currentJobPage.website, '_blank')} />
               </CardActions>
             </CardContent>
           </Card>

@@ -60,7 +60,13 @@ const Joblist = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          marginBottom: '60px',
+          marginBottom: {
+            xl: '50px',
+            lg: '50px',
+            md: '50px',
+            sm: '100px',
+            xs: '100px'
+          },
         }}
         noValidate
         autoComplete="off"
