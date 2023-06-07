@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {Box,Card,CardActions,CardContent,Typography,Button,Link} from '@mui/material';
 import Buttons from '../components/Buttons';
+import { motion } from "framer-motion"
 //import {ReactSVG} from 'react-svg';
 
 
@@ -34,6 +35,18 @@ const Jobdetails = () => {
 
   return (
     <>
+    <motion.main
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+      transition={{ ease: 'easeInOut' }}
+    >
       <Box sx={{ margin: '0 60px', 
                 position:'relative', // To position the contaiiner on header
                 marginTop:'-70px',    // To position the container on header
@@ -196,6 +209,7 @@ const Jobdetails = () => {
             </CardActions>
           </CardContent>
         </Card>
+        </motion.main>
     </>
   );
 };

@@ -6,6 +6,7 @@ import Button from "../components/Buttons";
 import Job from '../components/Job';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import { useTheme } from '@mui/material/styles';
+import { motion } from "framer-motion"
 
 
   
@@ -45,6 +46,18 @@ const Joblist = () => {
 
   return (
     <>
+     <motion.main
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+      transition={{ ease: 'easeInOut' }}
+    >
       <Box
         component="form"
         sx={{
@@ -228,7 +241,7 @@ const Joblist = () => {
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '3rem',
+            gap: '2.5rem',
             flexWrap: 'wrap'
           }}
         >
@@ -251,6 +264,8 @@ const Joblist = () => {
         )
         }
       </Box>
+
+      </motion.main>
     </>
   )
 }
