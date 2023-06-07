@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Box,Paper,Card,CardActions,CardContent,Button,Typography}from '@mui/material';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion"
 const bull = (
   <Box
     component="span"
@@ -12,6 +13,18 @@ const bull = (
 
 export default function Job({job}) {
   return (
+    <motion.main
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+      transition={{ ease: 'easeInOut' }}
+    >
     <Paper>
     <Card 
     sx={{ height:'210px',
@@ -65,5 +78,6 @@ export default function Job({job}) {
       </CardActions>
     </Card>
     </Paper>
+    </motion.main>
   );
 }

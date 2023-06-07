@@ -44,6 +44,12 @@ const Joblist = () => {
     setIsFilterPromptOpen(true);
   }; //FilterAlt on small screen call function
 
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     window.scroll(0, 0);
+  //   }, 100);
+  // }, []);
+
   return (
     <>
      <motion.main
