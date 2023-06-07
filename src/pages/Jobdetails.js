@@ -1,215 +1,210 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import {Box,Card,CardActions,CardContent,Typography,Button} from '@mui/material';
+import { Box, Card, CardActions, CardContent, Typography, Button } from '@mui/material';
 import Buttons from '../components/Buttons';
-import { motion } from "framer-motion"
-//import {ReactSVG} from 'react-svg';
-
-
-
+import { motion } from 'framer-motion';
 
 const Jobdetails = () => {
-  const [jobs, setJobs] = useState([]);
-  const { position } = useParams();
-  const job = jobs.find(job => job.position === position);
+  const { jobId } = useParams();
+  const [jobsData, setJobsData] = useState([]);
+   
+  //  useEffect(() => {
+  //   fetch('/data.json')
+  //     .then((response) => response.json())
+  //     .then((data) => setJobsData(data));
+  // }, []);
+   
 
   useEffect(() => {
     fetch('/data.json')
-      .then(response => response.json())
-      .then(data => setJobs(data));
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // Log the data to verify if it is fetched correctly
+        setJobsData(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
   }, []);
 
-  if (!job) {
-    return <div>Loading...</div>;
-  } //To fix an error in browser loading page of Jobdetails
- 
+
+
+  const currentJobPage = jobsData.find((jobData) => jobData.id === Number(jobId));
 
   const bull = (
-    <Box
-      component="span"
-      sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
+    <Box component="span" sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}>
       •
     </Box>
   );
 
   return (
     <>
-    <motion.main
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-      }}
-      transition={{ ease: 'easeInOut' }}
-    >
-      <Box sx={{ margin: '0 60px', 
-                position:'relative', // To position the contaiiner on header
-                marginTop:'-70px',    // To position the container on header
-              }}>
-          <Card>
+      {currentJobPage && (
+        <>
+        <motion.main
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+          transition={{ ease: 'easeInOut' }}
+        >
+          <Box sx={{ margin: '0 60px', position: 'relative', marginTop: '-70px' }}>
+            <Card>
               <Box
                 sx={{
-                  display:{
-                    xl:'flex',
-                    lg:'flex',
-                    md:'flex',
-                    sm:'block',
-                    xs:'block',
+                  display: {
+                    xl: 'flex',
+                    lg: 'flex',
+                    md: 'flex',
+                    sm: 'block',
+                    xs: 'block',
                   },
-                  
                 }}
               >
                 <Box
                   sx={{
-                    backgroundColor: job.logoBackground,
+                    backgroundColor:currentJobPage.logoBackground,
                     width: '100px',
                     hight: '90px',
                     padding: '10px',
                   }}
                 >
                   <img
-                    src={job.logo}
-                    style={{ width: '30px', height: '30px' }}
+                    src={currentJobPage.logo}
+                    style={{ width: '50px', height: '50px' }}
                     alt="logo"
-                    onLoad={() => console.log('Image loaded:', job.logo)}
-                    onError={() => console.log('Image failed to load:', job.logo)}
+                    onLoad={() => console.log('Image loaded:', currentJobPage.logo)}
+                    onError={() => console.log('Image failed to load:', currentJobPage.logo)}
                   />
                 </Box>
-                <Box sx={{padding:'30px 20px'}}>
-                  
+                <Box sx={{ padding: '30px 20px' }}>
                   <Typography variant="h5" component="div">
-                    {job.company}
+                    {currentJobPage.company}
                   </Typography>
-                  <Box sx={{
-                         display:{
-                          xl:'flex',
-                          lg:'flex',
-                          md:'flex',
-                          sm:'block',
-                          xs:'block'
-                        },
-                        gap:{
-                          sx:'5rem',
-                          sm:'10rem',
-                          md:'25rem',
-                          lg:'39rem',
-                          xl:'49rem'
-                        },
-                  }}
-                  >
                   <Box
-                    color="text.secondary"
+                    sx={{
+                      display: {
+                        xl: 'flex',
+                        lg: 'flex',
+                        md: 'flex',
+                        sm: 'block',
+                        xs: 'block',
+                      },
+                      gap: {
+                        sx: '5rem',
+                        sm: '10rem',
+                        md: '25rem',
+                        lg: '39rem',
+                        xl: '49rem',
+                      },
+                    }}
                   >
-                    {job.website}
+                    <Box color="text.secondary">{currentJobPage.website}</Box>
+                    <Box>
+                    <Buttons name="Company Site" onClick={() => window.open(currentJobPage.website, '_blank')} />
+                    </Box>
                   </Box>
-                  <Box>
-                    <Buttons name='Company Site'/>
-                  </Box>
-                   </Box>
                 </Box>
               </Box>
-          </Card>   
-         <Card sx={{margin: '30px 0', 
-                    padding: '50px',
-                  }}>
-            <CardContent>
-          <Box>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary">
-              {job.postedAt}
-              {bull}
-              {job.contract}
-            </Typography>
-             <Box 
-             sx={{
-              display:{
-                xl:'flex',
-                lg:'flex',
-                md:'flex',
-                sm:'block',
-                xs:'block'
-              },
-              justifyContent: 'space-between'
-            }}>
-            <Typography variant="h4" component="div">
-              {job.position}
-            </Typography>
-
-            <CardActions>
-              <Buttons name="Apply Now" />
-            </CardActions>
-            </Box>
-
-            <Button
-              size="small"
+            </Card>
+            <Card sx={{ margin: '30px 0', padding: '50px' }}>
+              <CardContent>
+                <Box>
+                  <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                   {currentJobPage.postedAt}
+                     {bull}
+                    {currentJobPage.contract}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: {
+                        xl: 'flex',
+                        lg: 'flex',
+                        md: 'flex',
+                        sm: 'block',
+                        xs: 'block',
+                      },
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <Typography variant="h4" component="div">
+                      {currentJobPage.position}
+                    </Typography>
+                    <CardActions>
+                     <Buttons name="Apply Now" onClick={() => window.open(currentJobPage.website, '_blank')} />
+                    </CardActions>
+                  </Box>
+                  <Button
+                    size="small"
+                    sx={{
+                      textTransform: 'none',
+                      color: '#5964E0',
+                      paddingBottom: '5px',
+                    }}
+                  >
+                    {currentJobPage.location}
+                  </Button>
+                </Box>
+                <Typography variant="p" component="div">
+                  {currentJobPage.description}
+                </Typography>
+                <Typography sx={{ margin: '15px 0' }} variant="h5" component="div">
+                  Requirements
+                </Typography>
+                <Typography variant="p" component="div">
+                  {currentJobPage.requirements?.content}
+                </Typography>
+                <Typography variant="p" component="div">
+                  {currentJobPage.requirements?.items?.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </Typography>
+                <Typography sx={{ margin: '15px 0' }} variant="h5" component="div">
+                  WHAT YOU WILL DO
+                </Typography>
+                <Typography variant="p" component="div">
+                  {currentJobPage.role?.content}
+                </Typography>
+                <Typography variant="p" component="div">
+                <ol>
+                    {currentJobPage.role?.items?.map((item) => (
+                    <li key={item}>{item}</li>
+                    ))}
+               </ol>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+          </motion.main>
+          <motion.footer>
+          <Card>
+            <CardContent
               sx={{
-                textTransform: 'none',
-                color: '#5964E0',
-                paddingBottom: '5px'
+                display: 'flex',
+                justifyContent: 'space-evenly',
               }}
             >
-              {job.location}
-            </Button>
-
-          </Box>
-          <Typography variant="p" componen="div">
-            {job.description}
-          </Typography>
-          <Typography sx={{ margin: '15px 0' }} variant="h5" component="div">
-            Requirements
-          </Typography>
-          <Typography variant="p" component="div">
-            {job.requirements.content}
-          </Typography>
-          <Typography variant="p" component="div">
-            {job.requirements.items}
-          </Typography>
-          <Typography sx={{ margin: '15px 0' }} variant="h5" component="div">
-            WHAT YOU WILL DO
-          </Typography>
-          <Typography variant="p" component="div">
-            {job.role.content}
-          </Typography>
-          <Typography variant="p" component="div">
-            {job.role.items}
-          </Typography>
-
-          </CardContent>
-        </Card>
-
-        
-      </Box>
-
-      <Card>
-          <CardContent
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-evenly',
-            }}
-          >
-            <Box>
-              <Typography variant="h4" component="div">
-                {job.position}
-              </Typography>
-              <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
-                gutterBottom
-              >
-                So Digital Inc.
-              </Typography>
-            </Box>
-
-            <CardActions>
-              <Buttons name="Apply Now" />
-            </CardActions>
-          </CardContent>
-        </Card>
-        </motion.main>
+              <Box>
+                <Typography variant="h4" component="div">
+                  {currentJobPage.position}
+                </Typography>
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                  {currentJobPage.company}
+                </Typography>
+              </Box>
+              <CardActions>
+                <Buttons name="Apply Now" />
+              </CardActions>
+            </CardContent>
+          </Card>
+          </motion.footer>
+        </>
+      )}
     </>
   );
 };

@@ -35,7 +35,7 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={<Joblist />} />
-              <Route path="/jobDetails/:position" element={<Jobdetails />} />
+              <Route path="/jobDetails/:jobId" element={<Jobdetails />} />
             </Routes>
           </Router>
           </AnimatePresence>

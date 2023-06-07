@@ -9,9 +9,6 @@ import { useTheme } from '@mui/material/styles';
 import { motion } from "framer-motion"
 
 
-  
-  
-
 const Joblist = () => {
   const [visibleCards, setVisibleCards] = useState(6); //Number of initial visible cards
   const [jobs, setJobs] = useState([]);
@@ -44,12 +41,6 @@ const Joblist = () => {
     setIsFilterPromptOpen(true);
   }; //FilterAlt on small screen call function
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     window.scroll(0, 0);
-  //   }, 100);
-  // }, []);
-
   return (
     <>
      <motion.main
@@ -69,7 +60,7 @@ const Joblist = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          marginBottom: '50px',
+          marginBottom: '60px',
         }}
         noValidate
         autoComplete="off"
