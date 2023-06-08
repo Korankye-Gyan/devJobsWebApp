@@ -25,3 +25,11 @@ Bonus: Have the correct color scheme chosen for them based on their computer pre
 ![Home - Mobile - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/718f4138-946b-4a53-b145-a32cc72021ca)
 ![Detail - Mobile - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/5754542c-2689-4aa2-b27b-454574783768)
 ![Detail - Mobile - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/777d8f8d-6275-45b1-a5d8-2d6170e3e778)
+
+##Built with
+Materil Ui
+Semantic HTML5 markup
+CSS (CSS Modules)
+React (useState, useEffect, Context)
+React Router v6
+Framer Motion
