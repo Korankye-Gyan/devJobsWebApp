@@ -61,7 +61,7 @@ const Joblist = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          marginBottom: '60px',
+          marginBottom: '50px',
           position:'static'
         }}
         noValidate
@@ -75,7 +75,12 @@ const Joblist = () => {
             display: 'flex',
             alignItems: 'stretch',
             position: 'absolute', // To position search bar on header
-            marginTop: '-60px'    // To position search bar on header
+            marginTop:{
+              xl: '-60px',
+              lg: '-60px',
+              md: '-60px',
+              sm: '-80px',
+              xs: '-80px'},    // To position search bar on header
           }}
         >
           <Box>
