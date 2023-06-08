@@ -23,7 +23,5 @@ Bonus: Have the correct color scheme chosen for them based on their computer pre
 ![Detail - Tablet - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/11c2f660-cbb4-4621-a208-9f682f228d34)
 ![Home - Mobile - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/da67c9e0-56d3-403c-acbc-dfee304000ca)
 ![Home - Mobile - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/718f4138-946b-4a53-b145-a32cc72021ca)
-<img width="375" alt="Home - Mobile - Light - Filter" src="https://github.com/Korankye-Gyan/<img width="375" alt="Home - Mobile - Dark - Filter" src="https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/936e94c0-4e28-4c94-a7f7-8a528bf9de22">
-devJobsWebApp/assets/71855200/c1904951-87a2-4dfd-8a3f-daed2e18e6d0">
 ![Detail - Mobile - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/5754542c-2689-4aa2-b27b-454574783768)
 ![Detail - Mobile - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/777d8f8d-6275-45b1-a5d8-2d6170e3e778)
