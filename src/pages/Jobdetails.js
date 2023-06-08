@@ -8,24 +8,24 @@ const Jobdetails = () => {
   const { jobId } = useParams();
   const [jobsData, setJobsData] = useState([]);
    
-  //  useEffect(() => {
-  //   fetch('/data.json')
-  //     .then((response) => response.json())
-  //     .then((data) => setJobsData(data));
-  // }, []);
-   
-
-  useEffect(() => {
+   useEffect(() => {
     fetch('/data.json')
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data); // Log the data to verify if it is fetched correctly
-        setJobsData(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
+      .then((data) => setJobsData(data));
   }, []);
+   
+
+  // useEffect(() => {
+  //   fetch('/data.json')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data); // Log the data to verify if it is fetched correctly
+  //       setJobsData(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, []);
 
 
 
@@ -74,15 +74,19 @@ const Jobdetails = () => {
                     backgroundColor:currentJobPage.logoBackground,
                     width: '100px',
                     hight: '90px',
-                    padding: '10px',
+                    display:'flex',
+                    alignItems:'center',
+                    justifyContent:'center'
                   }}
                 >
                   <img
                     src={currentJobPage.logo}
-                    style={{ width: '50px', height: '50px' }}
+                    style={{ width: '30px', 
+                    height: '30px', 
+                  }}
                     alt="logo"
-                    onLoad={() => console.log('Image loaded:', currentJobPage.logo)}
-                    onError={() => console.log('Image failed to load:', currentJobPage.logo)}
+                    // onLoad={() => console.log('Image loaded:', currentJobPage.logo)}
+                    // onError={() => console.log('Image failed to load:', currentJobPage.logo)}
                   />
                 </Box>
                 <Box sx={{ padding: '30px 20px' }}>
