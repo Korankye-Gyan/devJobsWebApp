@@ -35,7 +35,7 @@ export default function Job({job}) {
            lg:'320px',
            xl:'320px'
           },
-          marginTop:'20px'
+          marginTop:'40px'
         }}>
       <CardContent>
          <Box
