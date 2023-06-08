@@ -27,7 +27,7 @@ export default function Job({job}) {
     >
     <Paper>
     <Card 
-    sx={{ height:'210px',
+    sx={{ minHeight:'210px',
           width:{
            xs:'300px',
            sm:'300px',
@@ -35,6 +35,7 @@ export default function Job({job}) {
            lg:'320px',
            xl:'320px'
           },
+          marginTop:'20px'
         }}>
       <CardContent>
          <Box
