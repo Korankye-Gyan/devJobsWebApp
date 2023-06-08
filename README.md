@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Frontend Mentor - Devjobs web app solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the Devjobs web app challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## The challenge
+Users should be able to:
 
-In the project directory, you can run:
+view the optimal layout for each page depending on their device's screen size
+See hover states for all interactive elements throughout the site
+Be able to filter jobs on the index page by title, location, and whether a job is for a full-time position
+Be able to click a job from the index page so that they can read more information and apply for the job
+Bonus: Have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS.
 
-### `npm start`
+#Screenshot
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Home - Desktop - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/7ccdf025-d486-48f7-bee9-eb793591196d)
+![Detail - Desktop - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/e342d7f8-f6da-4903-a5f1-bcf58cac7437)
+![Home - Desktop - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/ae4e9e6f-b442-4024-ba44-de8f129bf7ba)
+![Detail - Desktop - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/74b15998-eb3d-441c-b700-a165c679dd40)
+![Home - Tablet - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/d11b80ab-bb5e-43e3-a504-994df8971fd4)
+![Home - Tablet - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/b0a25fec-7084-46c6-ba9e-9ec6f312e794)
+![Detail - Tablet - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/8443ca6f-45cb-4a6b-ba17-ae2452f10af6)
+![Detail - Tablet - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/11c2f660-cbb4-4621-a208-9f682f228d34)
+![Home - Mobile - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/da67c9e0-56d3-403c-acbc-dfee304000ca)
+![Home - Mobile - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/718f4138-946b-4a53-b145-a32cc72021ca)
+<img width="375" alt="Home - Mobile - Light - Filter" src="https://github.com/Korankye-Gyan/<img width="375" alt="Home - Mobile - Dark - Filter" src="https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/936e94c0-4e28-4c94-a7f7-8a528bf9de22">
+devJobsWebApp/assets/71855200/c1904951-87a2-4dfd-8a3f-daed2e18e6d0">
+![Detail - Mobile - Light](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/5754542c-2689-4aa2-b27b-454574783768)
+![Detail - Mobile - Dark](https://github.com/Korankye-Gyan/devJobsWebApp/assets/71855200/777d8f8d-6275-45b1-a5d8-2d6170e3e778)
