@@ -55,18 +55,14 @@ const Joblist = () => {
       }}
       transition={{ ease: 'easeInOut' }}
     >
+      {/*===================== Search bar begins here====================================== */}
       <Box
         component="form"
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          marginBottom: {
-            xl: '50px',
-            lg: '50px',
-            md: '50px',
-            sm: '100px',
-            xs: '100px'
-          },
+          marginBottom: '60px',
+          position:'static'
         }}
         noValidate
         autoComplete="off"
@@ -239,6 +235,9 @@ const Joblist = () => {
         </Card>
         </Paper>
       )}
+      {/*===================== Search bar begins here====================================== */}
+
+      {/*===================== card Items begins here====================================== */}
       <List>
         <ListItem
           sx={{
@@ -267,7 +266,7 @@ const Joblist = () => {
         )
         }
       </Box>
-
+     {/*===================== card Items ends here====================================== */}
       </motion.main>
     </>
   )
