@@ -28,9 +28,9 @@ Bonus: Have the correct color scheme chosen for them based on their computer pre
 
 **Built with**
 
-*Materil Ui
-*Semantic HTML5 markup
-*CSS (CSS Modules)
-*React (useState, useEffect, Context)
-*React Router v6
-*Framer Motion
+*Materil Ui*
+*Semantic HTML5 markup*
+*CSS (CSS Modules)*
+*React (useState, useEffect, Context)*
+*React Router v6*
+*Framer Motion*
