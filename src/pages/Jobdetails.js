@@ -55,9 +55,22 @@ const Jobdetails = () => {
         >
           <Box sx={{
              margin: '0 60px',
-              position: 'relative', 
-              marginTop: '-70px'}}>
-            <Card>
+               position: 'relative', 
+               top: '-70px'
+              }}>
+            <Card
+             sx={{
+              display:'flex',
+              alignItems:'center',
+              justifyContent:{
+                xl: 'space-between',
+                lg: 'space-between',
+                md: 'space-between',
+                sm: 'space-evenly',
+                xs: 'space-evenly',
+              },
+             }}
+            >
               <Box
                 sx={{
                   display: {
@@ -67,16 +80,65 @@ const Jobdetails = () => {
                     sm: 'block',
                     xs: 'block',
                   },
+                  
                 }}
               >
                 <Box
                   sx={{
                     backgroundColor:currentJobPage.logoBackground,
-                    width: '100px',
-                    hight: '90px',
+                    width: {
+                      xl: '100px',
+                      lg: '100px',
+                      md: '100px',
+                      sm: '60px',
+                      xs: '60px',
+                    },
+                    hight:{
+                      xl: '90px',
+                      lg: '90px',
+                      md: '90px',
+                      sm: '30px',
+                      xs: '30px',
+                    },
+                    borderRadius:{
+                      xl: '0',
+                      lg: '0',
+                      md: '0',
+                      sm: '15px',
+                      xs: '15px',
+                    },
+                    padding:{
+                      xl: '0',
+                      lg: '0',
+                      md: '0',
+                      sm: '15px',
+                      xs: '15px',
+                    },
                     display:'flex',
                     alignItems:'center',
-                    justifyContent:'center'
+                    justifyContent:'center',
+                    position:{
+                      xl: 'static',
+                      lg: 'static',
+                      md: 'static',
+                      sm: 'absolute',
+                      xs: 'absolute',
+                    },
+                    marginTop:{
+                      xl: '0',
+                      lg: '0',
+                      md: '0',
+                      sm: '-40px',
+                      xs: '-40px',
+                    },
+                    marginLeft:{
+                      xl: '0',
+                      lg: '0',
+                      md: '0',
+                      sm: '20px',
+                      xs: '20px',
+                    },
+                
                   }}
                 >
                   <img
@@ -89,7 +151,8 @@ const Jobdetails = () => {
                     // onError={() => console.log('Image failed to load:', currentJobPage.logo)}
                   />
                 </Box>
-                <Box sx={{ padding: '30px 20px' }}>
+                <Box sx={{ 
+                  padding: '30px 20px' }}>
                   <Typography variant="h5" component="div">
                     {currentJobPage.company}
                   </Typography>
@@ -106,18 +169,22 @@ const Jobdetails = () => {
                         sx: '5rem',
                         sm: '10rem',
                         md: '25rem',
-                        lg: '39rem',
-                        xl: '49rem',
+                        lg: '38rem',
+                        xl: '48rem',
                       },
+                      
+                      
                     }}
                   >
-                    <Box color="text.secondary">{currentJobPage.website}</Box>
-                    <Box>
+                    <Box color="text.secondary">
+                      {currentJobPage.website}
+                      </Box>
+                    
                     <Buttons name="Company Site" onClick={() => window.open(currentJobPage.website, '_blank')} />
-                    </Box>
+                  
                   </Box>
                 </Box>
-              </Box>
+                </Box>
             </Card>
             <Card sx={{ margin: '30px 0', padding: '50px' }}>
               <CardContent>
